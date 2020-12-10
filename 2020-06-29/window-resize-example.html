@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Window resize example</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      div {
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        background-image: url(img/bgtile.png);
+        border: 10px solid white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div>
+
+    </div>
+
+    <script>
+        // 首先，获取这个div的引用，然后获取视窗（显示文档的内部窗口）的宽度和高度， 并存入变量中 — 这两个值包含在Window.innerWidth 和 Window.innerHeight属性中。在已存在的<script>元素中加入下列代码
+        var div = document.querySelector('div');
+        var WIDTH = window.innerWidth;
+        var HEIGHT = window.innerHeight;
+
+        div.style.width = WIDTH + 'px';
+        div.style.height = HEIGHT + 'px';
+
+        window.onresize = function() {
+            WIDTH = window.innerWidth;
+            HEIGHT = window.innerHeight;
+            div.style.width = WIDTH + 'px';
+            div.style.height = HEIGHT + 'px';
+    }
+    </script>
+  </body>
+</html>

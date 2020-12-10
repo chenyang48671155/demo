@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen API</title>
+</head>
+<body>
+    <header>
+        <h2>Web APIs<h2>
+    </header>
+    <div class="web-api-cnt">
+        <div class="web-api-card">
+            <div class="web-api-card-head"> Demo - Fullscreen </div>
+            <div class="web-api-card-body">
+                <div id="error" class="close"></div>
+                <div> This API makes fullscreen-mode of our webpage possible. It lets you select the Element you want to
+                    view in fullscreen-mode, then it shuts off the browsers window features like URL bar, the window
+                    pane, and presents the Element to take the entire width and height of the system. In Android phones,
+                    it will remove the browsers window and the Android UI where the network status, battery status are
+                    displayed, and display the Element in full width of the Android system. </div>
+                <div class="video-stage">
+                    <video controls id="video" src="../../../douyin/Vue.js Explained in 100 Seconds.mp4"></video>
+                    <button onclick="toggle()">Toogle Fullscreen</button>
+                </div>
+                <div> This API makes fullscreen-mode of our webpage possible. It lets you select the Element you want to
+                    view in fullscreen-mode, then it shuts off the browsers window features like URL bar, the window
+                    pane, and presents the Element to take the entire width and height of the system. In Android phones,
+                    it will remove the browsers window and the Android UI where the network status, battery status are
+                    displayed, and display the Element in full width of the Android system. </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const l = console.log
+
+    function toggle() {
+        const videoStageEl = document.querySelector(".video-stage")
+        console.log(videoStageEl.requestFullscreen)
+        if (videoStageEl.requestFullscreen) {
+            if (!document.fullscreenElement) {
+                videoStageEl.requestFullscreen()
+            }
+            else {
+                document.exitFullscreen()
+            }
+        } else {
+            error.innerHTML = "Fullscreen API not supported in this device."
+            error.classList.remove("close")
+        }
+    }
+</script>
+</html>

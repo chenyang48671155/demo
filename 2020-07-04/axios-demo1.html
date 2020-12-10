@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.11.0/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        axios({
+            url:'http://jsonplaceholder.typicode.com/todos',
+            method:'get'
+        }).then(res => {
+            console.log(res);
+        })//默认使用get请求     
+        // 请求地址：http://jsonplaceholder.typicode.com/todos
+        // 请求第二地址:http://caofuqiang.com:8080/student/getAllStudent
+    </script>
+</body>
+</html>
